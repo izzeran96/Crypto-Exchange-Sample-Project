@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('crypto_types', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('network_type');
+            $table->string('crypto_type');
             $table->timestamps();
         });
     }

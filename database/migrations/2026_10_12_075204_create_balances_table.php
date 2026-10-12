@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('balances', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->decimal('amount');
             $table->timestamps();
         });
     }
