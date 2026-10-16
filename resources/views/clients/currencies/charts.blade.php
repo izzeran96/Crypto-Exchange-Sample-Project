@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="chart">
+        <div class="chart-graph">
+            
+        </div>
         <div class="card">
             <div class="card-body">
                 <form action="{{ route('currencies.swap.exchange') }}" method="post">
