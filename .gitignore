@@ -28,3 +28,12 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+
+# Docs and AI agent files: kept on the private feature branch only, never pushed to public main
+/info.md
+/CLAUDE.md
+/AGENTS.md
+/boost.json
+/.mcp.json
+/.claude/
+/.agents/
