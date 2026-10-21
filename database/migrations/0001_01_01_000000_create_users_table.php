@@ -14,11 +14,35 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('username')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+        });
+
+        Schema::create('user_admins',function (Blueprint $table){
+            $table->id();
+            $table->string('name');
+            $table->string('username')->unique();
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
+        });
+
+        Schema::create('2fa_auth',function (Blueprint $table){
+            $table->id();
+            $table->string('code');
+        });
+
+        // Schema::create('',function (Blueprint $table){
+
+        // });
+
+         Schema::create('user_logs',function (Blueprint $table){
+
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
