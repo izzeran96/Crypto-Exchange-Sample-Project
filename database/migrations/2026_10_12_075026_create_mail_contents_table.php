@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('mail_contents', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('title');
             $table->timestamps();
         });
     }

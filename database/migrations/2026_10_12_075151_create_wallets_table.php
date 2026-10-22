@@ -45,8 +45,11 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('transaction_ids', function (Blueprint $table) {
+        Schema::create('user_wallet_activity', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('wallet_id');
+            $table->unsignedBigInteger('transactions_id');
             $table->timestamps();
         });
     }
