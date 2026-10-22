@@ -19,10 +19,29 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Schema::create('wallets_trans', function (Blueprint $table) {
+            $table->id();
+            $table->string('tx');
+            $table->string('hash');
+            $table->string('block');
+            $table->decimal('amount');
+            $table->timestamps();
+        });
+
+
         Schema::create('testnet_wallets', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('wallet_id');
+            $table->timestamps();
+        });
+
+         Schema::create('wallets_trans_testnet', function (Blueprint $table) {
+            $table->id();
+            $table->string('tx');
+            $table->string('hash');
+            $table->string('block');
+            $table->decimal('amount');
             $table->timestamps();
         });
 
