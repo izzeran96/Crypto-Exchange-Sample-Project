@@ -18,6 +18,16 @@ return new class extends Migration
             $table->string('crypto_type');
             $table->timestamps();
         });
+
+        Schema::create('crypto_names', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+        });
+
+        Schema::create('crypto_values', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+        });
     }
 
     /**

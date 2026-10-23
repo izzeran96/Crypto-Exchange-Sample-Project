@@ -11,8 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('mail_title',function (Blueprint $table){
+            $table->id();
+            $table->unsignedBigInteger('created_user_id');
+            $table->string('title');
+            $table->timestamps();
+        });
         Schema::create('mail_contents', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('created_user_id');
             $table->unsignedBigInteger('title');
             $table->timestamps();
         });

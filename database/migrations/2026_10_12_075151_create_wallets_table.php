@@ -28,9 +28,19 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Schema::create('balances', function (Blueprint $table) {
+            $table->id();
+            $table->string('balance');
+            $table->unsignedBigInteger('wallet_id');
+            $table->decimal('amount');
+            $table->timestamps();
+        });
 
         Schema::create('testnet_wallets', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('balance_id');
+            $table->decimal('balance');
+            $table->decimal('last_balance');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('wallet_id');
             $table->timestamps();
@@ -44,6 +54,15 @@ return new class extends Migration
             $table->decimal('amount');
             $table->timestamps();
         });
+
+          Schema::create('balance_testnets', function (Blueprint $table) {
+            $table->id();
+            $table->string('balance');
+            $table->string('wallet_id');
+            $table->decimal('amount');
+            $table->timestamps();
+        });
+
 
         Schema::create('user_wallet_activity', function (Blueprint $table) {
             $table->id();
