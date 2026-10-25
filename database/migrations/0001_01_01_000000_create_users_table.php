@@ -35,6 +35,7 @@ return new class extends Migration
         Schema::create('2fa_auth',function (Blueprint $table){
             $table->id();
             $table->string('code');
+            $table->rememberToken();
         });
 
         // Schema::create('',function (Blueprint $table){

@@ -79,7 +79,11 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('wallets');
+        Schema::dropIfExists('wallets_trans');
+        Schema::dropIfExists('balances');
         Schema::dropIfExists('testnet_wallets');
-        Schema::dropIfExists('transaction_ids');
+        Schema::dropIfExists('wallets_trans_testnet');
+        Schema::dropIfExists('balance_testnets');
+        Schema::dropIfExists('user_wallet_activity');
     }
 };
